@@ -22,9 +22,9 @@ public final class Controller {
     //
     //    ┌────── updates ──────┐
     //    │                     │
-    // ┌──▼┐                 ┌─┴────────┐ updates ┌──────┐
-    // │view│                 │controller├─────────►model│
-    // └──┬─┘                 └─▲───────┘         └──────┘
+    // ┌──▼─┐                 ┌─┴────────┐ updates ┌──────┐
+    // │view│                 │controller├─────────►model │
+    // └──┬─┘                 └─▲────────┘         └──────┘
     //    │       notifies      │
     //    └────── of user's ────┘
     //            actions

@@ -129,7 +129,7 @@ public final class View {
             var tags = preview.tags
                 .stream()
                 .map(tag -> tag.name)
-                .sorted((tag1, tag2) -> tag1.compareTo(tag2))
+                .sorted(String::compareTo)
                 .collect(Collectors.joining(","));
             var label = "- " + preview.name + " [" + tags + "]";
             cp.add(clickableLabel(label, () -> this.getController().userClickedPreview(preview)));
@@ -161,9 +161,7 @@ public final class View {
             new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
-                    SwingUtilities.invokeLater(() -> {
-                        action.run();
-                    });
+                    SwingUtilities.invokeLater(action::run);
                 }
             }
         );

@@ -17,7 +17,7 @@ public final class Printer {
 
         public String toString() {
             if (this.value instanceof String) {
-                return this.name + "='" + this.value.toString() + "'";
+                return this.name + "='" + this.value + "'";
             } else {
                 return this.name + "=" + this.value.toString();
             }
@@ -31,7 +31,7 @@ public final class Printer {
     // This is just a helper function to have a decent looking toString.
     public static String stringify(String name, List<Field> fields) {
         var builder = new StringBuilder(name);
-        var fieldsString = fields.stream().map(field -> field.toString()).collect(Collectors.joining(", "));
+        var fieldsString = fields.stream().map(Field::toString).collect(Collectors.joining(", "));
         builder.append("[");
         builder.append(fieldsString);
         builder.append("]");

@@ -7,23 +7,23 @@ import java.util.List;
 import java.util.Optional;
 
 public interface Model {
-    public Optional<Product> find(int productCode);
+    Optional<Product> find(int productCode);
 
-    public List<ProductPreview> previews();
+    List<ProductPreview> previews();
 
-    public boolean loadedPreviews();
+    boolean loadedPreviews();
 
-    public List<ProductPreview> loadPreviews();
+    List<ProductPreview> loadPreviews();
 
     // Create a mocked version of the model.
     //
-    public static Model mock() {
+    static Model mock() {
         return new MockedModel();
     }
 
     // Create a model that connects to a database using the given connection.
     //
-    public static Model fromConnection(Connection connection) {
+    static Model fromConnection(Connection connection) {
         return new DBModel(connection);
     }
 }

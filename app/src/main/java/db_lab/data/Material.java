@@ -43,7 +43,7 @@ public final class Material {
         );
     }
 
-    public final class DAO {
+    public static final class DAO {
 
         public static Map<Material, Float> forProduct(Connection connection, int productId) {
             var materials = new HashMap<Material, Float>();

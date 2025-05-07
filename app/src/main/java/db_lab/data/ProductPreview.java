@@ -51,9 +51,9 @@ public final class ProductPreview {
         );
     }
 
-    public final class DAO {
+    public static final class DAO {
 
-        public static final List<ProductPreview> list(Connection connection) {
+        public static List<ProductPreview> list(Connection connection) {
             var previews = new ArrayList<ProductPreview>();
 
             try (

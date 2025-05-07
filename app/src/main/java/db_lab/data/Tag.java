@@ -37,7 +37,7 @@ public final class Tag {
         return Printer.stringify("Tag", List.of(Printer.field("name", this.name)));
     }
 
-    public final class DAO {
+    public static final class DAO {
 
         public static Set<Tag> ofProduct(Connection connection, int productId) {
             var tags = new HashSet<Tag>();

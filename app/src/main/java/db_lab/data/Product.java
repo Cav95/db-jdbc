@@ -59,7 +59,7 @@ public final class Product {
         );
     }
 
-    public final class DAO {
+    public static final class DAO {
 
         public static Optional<Product> find(Connection connection, int productId) {
             try (

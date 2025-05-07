@@ -1,5 +1,7 @@
 package db_lab.data;
 
+import java.io.Serial;
+
 // This is a runtime exception we define to wrap all the exceptions coming from
 // the DAO objects we're going to define.
 //
@@ -7,6 +9,7 @@ package db_lab.data;
 //
 public final class DAOException extends RuntimeException {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     public DAOException(String message) {

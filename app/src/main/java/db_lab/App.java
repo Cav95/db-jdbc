@@ -19,7 +19,7 @@ public final class App {
             // with our application.
             try {
                 connection.close();
-            } catch (Exception e) {}
+            } catch (Exception ignored) {}
         });
         var controller = new Controller(model, view);
         view.setController(controller);

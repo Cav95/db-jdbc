@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 //
 public final class MockedModel implements Model {
 
-    private Map<ProductPreview, Product> previews;
+    private final Map<ProductPreview, Product> previews;
 
     public MockedModel() {
         var previews = new HashMap<ProductPreview, Product>();
@@ -71,7 +71,7 @@ public final class MockedModel implements Model {
             .stream()
             .filter(entry -> entry.getKey().code == productCode)
             .findFirst()
-            .map(entry -> entry.getValue());
+            .map(Map.Entry::getValue);
     }
 
     @Override
