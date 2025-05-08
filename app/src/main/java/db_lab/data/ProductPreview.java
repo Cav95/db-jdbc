@@ -56,7 +56,24 @@ public final class ProductPreview {
         public static List<ProductPreview> list(Connection connection) {
             // Iterating through a resultSet:
             // https://docs.oracle.com/javase/tutorial/jdbc/basics/retrieving.html
-            throw new UnsupportedOperationException("unimplemented");
+            var previews = new ArrayList<ProductPreview>();
+
+            try (
+                var statement = DAOUtils.prepare(connection, Queries.LIST_PRODUCTS);
+                var resultSet = statement.executeQuery();
+            ) {
+                while(resultSet.next()){
+                    var code = resultSet.getInt("code");
+                    var name = resultSet.getString("name");
+                    var tags = Tag.DAO.ofProduct(connection, code);
+                    var preview = new ProductPreview(code , name  , tags);
+                    previews.add(preview);
+
+                }
+            } catch (Exception e) {
+                throw new DAOException(e);
+            }
+            return previews;
         }
     }
 }

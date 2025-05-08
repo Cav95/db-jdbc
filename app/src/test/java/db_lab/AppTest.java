@@ -28,7 +28,7 @@ public final class AppTest {
 
     @BeforeClass
     public static void setup() throws SQLException {
-        connection = DAOUtils.localMySQLConnection("tessiland", "root", "");
+        connection = DAOUtils.localMySQLConnection("tessiland", "root", "mcavina");
 
         // We do everything inside a transaction so that we won't pollute the
         // database with test data.
